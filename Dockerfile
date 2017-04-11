@@ -1,8 +1,7 @@
-#Image for OpsCenter V5.1.1 for compatibility with current environment
-#Remove version reference to get latest as in commented line below
+#Image for Cassandra OpsCenter Community Edition
 
 FROM ubuntu:latest
-LABEL version="0.1"
+LABEL version="1.0"
 LABEL maintainer "Erik Ciccarone"
 
 # Download Prereqs
@@ -18,8 +17,7 @@ RUN \
 RUN \
   echo "deb http://debian.datastax.com/community stable main" | tee -a /etc/apt/sources.list.d/datastax.community.list; \
   apt-get update; \
-  apt-get -qq -y install opscenter=5.1.1;
-# apt-get -qq -y install opscenter;
+  apt-get -qq -y install opscenter;
 
 # Expose ports
 EXPOSE 8888 61620
